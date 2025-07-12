@@ -1,0 +1,36 @@
+[package]
+name = "tinyurl-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Minh Le Duc <minh.leduc.0210@gmail.com>"]
+description = "A minimal URL shortening service written in Rust with async support."
+license = "MIT"
+repository = "https://github.com/MinLee0210/tinyurl-rs"
+
+[dependencies]
+actix-web = "4.11.0"
+chrono = { version = "0.4.41", features = ["serde"] }
+dotenv = "0.15.0"
+env_logger = "0.11.8"
+log = "0.4.27"
+serde = { version = "1.0.219", features = ["derive"] }
+serde_json = "1.0.140"
+sha2 = "0.10.9"
+sqlx = { version = "0.8.5", features = ["postgres", "runtime-tokio-rustls", "chrono", "migrate"] }
+tokio = { version = "1.0", features = ["full"] }
+anyhow = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.0", features = ["v4", "serde"] }
+url = "2.5"
+base64 = "0.21"
+rand = "0.8"
+redis = { version = "0.24", features = ["tokio-comp"] }
+# OpenAPI support
+utoipa = { version = "4.2", features = ["actix_extras", "chrono", "uuid"] }
+utoipa-swagger-ui = { version = "6.0", features = ["actix-web"] }
+utoipa-redoc = { version = "3.0", features = ["actix-web"] }
+# Performance
+dashmap = "5.5"
+once_cell = "1.19"
+async-trait = "0.1"
+num_cpus = "1.16"
